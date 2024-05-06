@@ -1,0 +1,235 @@
+<html><head><title>新竹縣各校訂定校園行動載具管理規範執行現況調查</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/skeleton.css">
+
+<script>
+
+
+
+
+  function toogleDisplay() {
+    //alert(event.target.id); 
+    if(event.target.id=="juniorTag"){
+      var x = document.getElementById("JuniorSchool");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        juniorTag.textContent="國中學校名單如下▼";
+        PrimaryTag.textContent="點這裡顯示國小(幼兒園)學校名單▲";
+        PrimarySchool.style.display = "none";
+      }  else {
+        x.style.display = "none";
+        juniorTag.textContent="點這裡顯示國中學校名單▲";
+      }
+    }
+
+
+    if(event.target.id=="PrimaryTag"){
+      var x = document.getElementById("PrimarySchool");
+      //alert(x);
+
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        PrimaryTag.textContent="國小(幼兒園)學校名單如下▼";
+        juniorTag.textContent="點這裡顯示國中學校名單▲";
+        JuniorSchool.style.display = "none";
+
+      }  else {
+        x.style.display = "none";
+        PrimaryTag.textContent="點這裡顯示國小(幼兒園)學校名單▲";
+      }
+    }
+  }
+
+
+
+  //https://en.letswrite.tw/custom-google-form/
+  $(function() {
+  $('#submit').on('click', function() {
+    // 學校名稱
+    var SchoolName = $('#SchoolName').val();
+    if($("#SchoolName").val()==""){
+         //   alert("你尚未填寫學校名稱");
+           $('#SchoolName').focus();
+           return;
+    }
+
+    // 填報人姓名
+    var Name = $('#Name').val() ;
+    if($("#Name").val()==""){
+       //    alert("你尚未填寫姓名");
+           $('#Name').focus();
+           return;
+    }
+    //alert(Name);
+
+    // 填報人姓名連絡電話
+    var PhoneNO = $('#PhoneNO').val() ;
+    if($("#PhoneNO").val()==""){
+         //  alert("你尚未填寫連絡電話");
+           $('#PhoneNO').focus();
+           return;
+    }
+
+
+    // 填報人姓名電子郵件
+    var Email = $('#Email').val() ;
+    if($("#Email").val()==""){
+         //  alert("你尚未填寫電子郵件");
+           $('#Email').focus();
+           return;
+    }
+
+
+
+
+    //alert(PhoneNO);
+
+    // 是否有訂定「載具使用辦法」
+    //https://vocus.cc/article/63ac65f9fd897800017b7c3f
+    var ifLawed = function() {
+      var v;
+      $('[name="ifDOCLawed"]').each(function() {
+        //alert((this).prop('checked'));
+        //alert($("input[name='ifDOCLawed']:checked").val());
+       if($("input[name='ifDOCLawed']:checked").val() == "true") {
+
+          //v = $(this).val();
+            v = "已訂定";
+        }else{
+            v = "未訂定";
+        }
+      });
+      //alert(v);
+      return v;
+    };
+ 
+     // 意見回饋
+     var MsgReponse = $('#MsgReponse').val() ;
+    //alert(MsgReponse);
+    
+    
+    // post
+    var data = {    
+        
+      'entry.2049243288': SchoolName,
+      'entry.756787604': Name,
+      'entry.1932498509': PhoneNO,
+      'entry.1603285617': Email,
+      'entry.1988624849': ifLawed(),    
+      'entry.603680592': MsgReponse
+    };
+    $.ajax({
+      type: 'POST',
+      url: 'https://docs.google.com/forms/u/1/d/e/1FAIpQLSewxHWVay5asmg7L3zMB3Pnnj3-JUAbo0IXnljNu4jK9XnuQg/formResponse',
+      
+      data: data,
+      contentType: 'application/json',
+      dataType: 'jsonp',
+      complete: function() {
+        alert('填報完成，謝謝您...');
+      }
+    });
+
+  });
+});
+
+
+
+
+$(document).on('click', '#btnClick', function(event){
+      
+      //alert(event.target.textContent); 
+       var trigerObj=($(event.target));             //觸發按鈕的物件
+
+ 
+		
+      //https://api.jquery.com/each/        //清除全部按鈕清除格式
+      $( btnClick ).each(function( index ) {
+        $(this).css("background", "white");
+        $(this).css("color","#d5dbd6" );
+        //$(this).prop('disabled', 'true');
+
+      });
+      trigerObj.css("background-color", "black");  //凸顯被按下的按鈕格式
+      trigerObj.css("color", "white");
+      document.getElementById("SchoolName").value=event.target.textContent;  //學校名稱文字輸入欄
+
+      JuniorSchool.style.display="none";
+      PrimarySchool.style.display="none";
+      var schNam=event.target.textContent;
+      QueryString(schNam);//查詢google sheet學校名稱
+      
+
+
+
+
+      //alert($("#btnClick").text());        
+       //$(this).prop('disabled', 'true');
+       //$('#').children().css("background", "yellow");
+       //$("#btnClick").css("background", "blue");
+      
+       });    
+</script>
+<style type="text/css">
+. {
+  position: relative;
+  width: 10%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box; 
+}
+
+.
+</style> 
+</head>
+
+
+</head>
+
+<body style="margin: 2%;">
+
+  <h1 id="新竹縣各校訂定校園行動載具管理規範執行現況調查" style="
+    border-bottom: 1px solid; text-align: center;font-size: 2.0em;font-family: Roboto, Noto Sans TC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-weight: bold;
+    line-height: 4.5;
+    margin: 30px 0 15px;
+    color:darkgreen;
+    line-height: 2;">新竹縣各校訂定校園行動載具管理規範執行現況調查
+  </h1>
+<div class="row" style="border-style:dotted;">
+    <div class="twelve columns">
+        <p style="display: block;
+        margin: 20px;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 15px;
+        margin-inline-end: 15px;
+        line-height: 2;
+        font-family: Roboto, Noto Sans TC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        overflow-wrap: break-word;    
+        
+        unicode-bidi: isolate;">
+    為瞭解本縣各校訂定<span style="color: #e91061;"><B>「校園行動載具管理規範」</B></span>執行現況，請各校<span style="border-radius: 0.2em;
+    box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.1);
+    font-family: inherit;
+    padding: 0.1em 0.3em;
+    background:#282c34;
+    color:#fff;
+    white-space: nowrap;">於113年5月17日（星期五）中午12:00以前</span>填報本調查表，並請提供實務執行相關說明及建議，俾利本局轉陳教育部國教署後續參辦
+    <p span style=" text-align: right;font-size: 0.9em;">新竹縣政府教育局 李嘉彪 連絡電話：03-5518101分機2827</span>
+    </div>
+</div>
+<br>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+<script src="dist/main.min.js"></script>
+<script src="js/stringQueryFill.js"></script>
+</body>
+</html>
