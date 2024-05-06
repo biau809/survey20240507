@@ -77,10 +77,10 @@
     }
 
 
-    // 填報人姓名連絡電話
+    // 填報人姓名電子郵件
     var Email = $('#Email').val() ;
     if($("#Email").val()==""){
-         //  alert("你尚未填寫連絡電話");
+         //  alert("你尚未填寫電子郵件");
            $('#Email').focus();
            return;
     }
@@ -127,6 +127,7 @@
     $.ajax({
       type: 'POST',
       url: 'https://docs.google.com/forms/u/1/d/e/1FAIpQLSewxHWVay5asmg7L3zMB3Pnnj3-JUAbo0IXnljNu4jK9XnuQg/formResponse',
+      
       data: data,
       contentType: 'application/json',
       dataType: 'jsonp',
@@ -192,7 +193,7 @@ $(document).on('click', '#btnClick', function(event){
 
 </head>
 
-<body style="margin: 5%;">
+<body style="margin: 2%;">
 
   <h1 id="新竹縣各校訂定校園行動載具管理規範執行現況調查" style="
     border-bottom: 1px solid; text-align: center;font-size: 2.0em;font-family: Roboto, Noto Sans TC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
@@ -460,7 +461,7 @@ $(document).on('click', '#btnClick', function(event){
     </div>  
     <button class=" btn-outline-danger" style="width: 650px;border:none;text-align: left;">學生在校期間持有行動載具，對教學、生活教育之利弊分析。</br> (請條列式提供相關說明或提供實務現場對於行動載具管理之建議) </button>
     <div class="row">
-        <div class="twelve"><textarea id=MsgReponse name='entry.999999' class="TextareaFormStyle" rows="15"   ></textarea></div>
+        <div class="twelve"><textarea id=MsgReponse name='entry.999999' class="TextareaFormStyle" style="-webkit-user-select:text !important" contenteditable=”true”rows="15"   ></textarea></div>
     </div>
 </div>
 
