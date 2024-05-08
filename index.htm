@@ -132,7 +132,11 @@
       contentType: 'application/json',
       dataType: 'jsonp',
       complete: function() {
-        alert('填報完成，謝謝您...');
+        //alert('填報完成，謝謝您...');
+	submit.style.backgroundColor ="#ff0000";
+	submit.style.fontSize = "35px";
+	submit.textContent="填報完成，感謝您的填報！";	 
+	submit.disabled = true;	
       }
     });
 
