@@ -21,7 +21,10 @@ function QueryString(qStr){
         //console.log(data); 
 
         //document.getElementById("ReportList").innerHTML+=`學校名稱   填報時間<br>`;  //帶入填報人姓名
-        document.getElementById("ReportList").innerHTML=``;         for( i=1;i<=total;i++){
+
+	    document.getElementById('DateTime').innerHTML = new Date();
+	document.getElementById("ReportList").innerHTML=``;         
+	    for( i=1;i<=total;i++){
             document.getElementById("ReportList").innerHTML+=`<button class="btn-outline-danger">${data[i].SchoolName}</button>&nbsp;&nbsp<button>${data[i].DateTime}</button><br>`;  //帶入填報人姓名
             //document.getElementById("ReportList").innerText+=`${data[i].SchoolName} ${data[i].DateTime}`;  //帶入填報人姓名
             //document.getElementById("ReportList").innerHTML = "<br>";
