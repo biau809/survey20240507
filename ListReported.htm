@@ -10,34 +10,7 @@
   <link rel="stylesheet" href="css/skeleton.css">
   
   <script>
-  
-  
-  
-  
-    function toogleDisplay() {
-      //alert(event.target.id); 
-      if(event.target.id=="juniorTag"){
-        var x = document.getElementById("JuniorSchool");
-        if (x.style.display === "none") {
-          x.style.display = "block";
-          juniorTag.textContent="國中學校名單如下▼";
-          PrimaryTag.textContent="點這裡顯示國小(幼兒園)學校名單▲";
-          PrimarySchool.style.display = "none";
-        }  else {
-          x.style.display = "none";
-          juniorTag.textContent="點這裡顯示國中學校名單▲";
-        }
-      }
-  
-  
-      }
-    
-  
-    
-  
-  
-  
-  
+ 
   $(document).on('click', '#btnClick', function(event){
         
         //alert(event.target.textContent); 
@@ -91,7 +64,7 @@
           
           unicode-bidi: isolate;">
           <button class="" id="btnClick">列出已填報學校名單</button>
-      </div>
+      </div><div id="DateTime"></div>
       <div id="ReportList">
       </div>
   </div>
