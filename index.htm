@@ -234,8 +234,6 @@ $(document).on('click', '#btnClick', function(event){
 
 <!------------------------------表單開頭-----------------------------
 
-<table style="border-style:dotted;">
-<tr><td  style="border-style:dotted;">
   <!--步驟1 學校名稱-->
 <div class="row">
     <div class="two columns">
@@ -471,19 +469,25 @@ $(document).on('click', '#btnClick', function(event){
 
 <!--送出表單資料-->
 <div class="row">
-    <div class="two columns">
+    <div class="nine columns">
       <button id="submit" class="btnStyle" style="background-color: cornflowerblue;">送出
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-check" viewBox="0 0 16 16">
              <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855a.75.75 0 0 0-.124 1.329l4.995 3.178 1.531 2.406a.5.5 0 0 0 .844-.536L6.637 10.07l7.494-7.494-1.895 4.738a.5.5 0 1 0 .928.372zm-2.54 1.183L5.93 9.363 1.591 6.602z"/>
             <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686"/>
         </svg>
       </button>
-    </div>  	<a href="ListReported.htm">各校填報狀況，請點這裡</a>  
-   
-    </div>
-</div>
-</div>
-</td></tr></table>
+    </div>  	
+
+     <div > 
+	   <button class=" btn-outline-danger" style="align:center" onClick="window.open('ListReported.htm');">
+	   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-check" viewBox="0 0 16 16">
+		 <path fill-rule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+		 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+	   </svg>
+	   各校填報狀況，請點這裡</a>  </button>   
+	 </div>  
+    
+ </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
 <script src="dist/main.min.js"></script>
