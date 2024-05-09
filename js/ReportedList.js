@@ -1,5 +1,5 @@
 //const url='https://script.google.com/macros/s/AKfycbxpv00JQLhKWnIWzn8QtWX1s0mrjkThBp-Yj2bTJXPLCJKf2V-scVtw-0EJINIA4PJ3Rw/exec';
-const url='https://script.google.com/macros/library/d/1qsoatBDmStUJvHLyn6DaBkpVph3abpWIvmkNZxbrny7w-kQ9GGDkE-em/6';
+const url='https://script.google.com/macros/s/AKfycbxpv00JQLhKWnIWzn8QtWX1s0mrjkThBp-Yj2bTJXPLCJKf2V-scVtw-0EJINIA4PJ3Rw/exec';
 
 
 function QueryString(qStr){
